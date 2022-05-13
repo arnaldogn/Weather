@@ -18,7 +18,7 @@ protocol WeatherServiceProtocol {
 }
 
 class WeatherService: WeatherServiceProtocol {
-    private static let apiKey = "9a8e59b84c754008aca1a9be88e0de5f"
+    private static let apiKey = "f935ce8f1acc45978fb1068538633961"
     private static let host = "api.weatherbit.io"
     private static let path = "/v2.0/current"
     private static let fahrenheit = "I"
@@ -33,21 +33,26 @@ class WeatherService: WeatherServiceProtocol {
             URLQueryItem(name: "key", value: apiKey),
             URLQueryItem(name: "units", value: fahrenheit),
             URLQueryItem(name: "lat", value: "\(latitude)"),
-            URLQueryItem(name: "lon", value: "\(longitude)")]
+            URLQueryItem(name: "lon", value: "\(longitude)")
+        ]
         
         URLSession.shared.dataTask(with: urlBuilder.url!) { data, response, error in
             guard let data = data else {
                 return completion(nil, .noData)
             }
             
-            do {
-                let decoder = JSONDecoder()
-                let weatherData = try decoder.decode(WeatherbitData.self, from: data)
-                completion(weatherData, nil)
-            } catch {
-                completion(nil, .noData)
+            DispatchQueue.main.async {
+                do {
+                    let decoder = JSONDecoder()
+                    let weatherData: WeatherbitData = try! decoder.decode(WeatherbitData.self, from: data)
+                    completion(weatherData, nil)
+                } catch {
+                    completion(nil, .noData)
+                }
+                
             }
-            
         }.resume()
     }
 }
+
+
