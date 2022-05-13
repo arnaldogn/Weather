@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var forecastSummary: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var currentTemperature: UILabel!
+    
     private let viewModel = WeatherViewModel()
     
     override func viewDidLoad() {
@@ -17,12 +20,15 @@ class ViewController: UIViewController {
         
         viewModel.forecastSummary.bind {  [weak self] forecast in
             self?.forecastSummary.text = forecast
-            print(forecast)
+        }
+    
+        viewModel.icon.bind {  [weak self] icon in
+            self?.icon.image = icon
         }
         
-        // Do any additional setup after loading the view.
+        viewModel.currentTemperature.bind { temp in
+            self.currentTemperature.text = temp
+        }
     }
-
-
 }
 

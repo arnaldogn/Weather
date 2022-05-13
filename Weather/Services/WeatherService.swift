@@ -44,7 +44,7 @@ class WeatherService: WeatherServiceProtocol {
             DispatchQueue.main.async {
                 do {
                     let decoder = JSONDecoder()
-                    let weatherData: WeatherbitData = try! decoder.decode(WeatherbitData.self, from: data)
+                    let weatherData: WeatherbitData = try decoder.decode(WeatherbitData.self, from: data)
                     completion(weatherData, nil)
                 } catch {
                     completion(nil, .noData)
