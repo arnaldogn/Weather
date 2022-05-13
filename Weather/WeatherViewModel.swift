@@ -6,4 +6,7 @@
 //
 
 import Foundation
-/Users/allengilliam/Documents/Weather
+
+class WeatherViewModel {
+    
+}
