@@ -10,13 +10,20 @@ import MapKit
 
 class WeatherViewModel {
     
-    let defaultLocation = CLLocationCoordinate2D(latitude: 61.2165586, longitude: -149.894838)
+    var defaultLocation = CLLocationCoordinate2D(latitude: 61.2165586, longitude: -149.894838)
     
+    let cityName = Box("Madrid")
     let forecastSummary = Box("Loading...")
     let icon: Box<UIImage?> = Box(nil)
     let currentTemperature = Box("")
     
     init() {
+        fetchWeather()
+    }
+    
+    func changeLocation(_ location: Location) {
+        defaultLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        cityName.value = location.name
         fetchWeather()
     }
         
