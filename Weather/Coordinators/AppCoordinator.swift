@@ -19,7 +19,8 @@ class AppCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
-    lazy var weatherViewModel = WeatherViewModel()
+    
+    lazy var weatherViewModel = WeatherViewModel(service: WeatherService())
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

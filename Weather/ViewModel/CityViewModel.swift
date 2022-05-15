@@ -19,9 +19,9 @@ class CityViewModel {
     }
     
     func fetchCity(_ name: String) {
-        geocoder.geocode(addressString: name) { [weak self] cities in
-            self?.locations.value = cities
-            print(cities)
+        Task.init {
+            let cities = await geocoder.geocode(addressString: name)
+            locations.value = cities
         }
     }
 }

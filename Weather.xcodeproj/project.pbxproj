@@ -14,6 +14,8 @@
 		23138EFD2831056700210222 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23138EFC2831056600210222 /* AppCoordinator.swift */; };
 		231D3C7F2831286000D9CF0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563830A282E6F6300EAF646 /* Main.storyboard */; };
 		231D3C872831440900D9CF0D /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D3C862831440900D9CF0D /* Instantiable.swift */; };
+		231D3C89283150C000D9CF0D /* RetainCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D3C88283150C000D9CF0D /* RetainCycle.swift */; };
+		231D3C8B28315A8F00D9CF0D /* FakeWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D3C8A28315A8F00D9CF0D /* FakeWeatherService.swift */; };
 		C5638305282E6F6300EAF646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5638304282E6F6300EAF646 /* AppDelegate.swift */; };
 		C5638309282E6F6300EAF646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5638308282E6F6300EAF646 /* ViewController.swift */; };
 		C563830E282E6F6500EAF646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C563830D282E6F6500EAF646 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		23138EFA282FBEAB00210222 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		23138EFC2831056600210222 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		231D3C862831440900D9CF0D /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
+		231D3C88283150C000D9CF0D /* RetainCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainCycle.swift; sourceTree = "<group>"; };
+		231D3C8A28315A8F00D9CF0D /* FakeWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherService.swift; sourceTree = "<group>"; };
 		C5638301282E6F6200EAF646 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5638304282E6F6300EAF646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5638308282E6F6300EAF646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			children = (
 				C5E2E028282E7A010099F8AE /* Box.swift */,
 				231D3C862831440900D9CF0D /* Instantiable.swift */,
+				231D3C88283150C000D9CF0D /* RetainCycle.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C563831B282E6F6600EAF646 /* WeatherTests.swift */,
+				231D3C8A28315A8F00D9CF0D /* FakeWeatherService.swift */,
 			);
 			path = WeatherTests;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				23138EFB282FBEAB00210222 /* CityViewModel.swift in Sources */,
 				23138EF9282FBDAA00210222 /* CityViewController.swift in Sources */,
 				23138EF5282FBC8E00210222 /* GeocoderService.swift in Sources */,
+				231D3C89283150C000D9CF0D /* RetainCycle.swift in Sources */,
 				C5E2E029282E7A010099F8AE /* Box.swift in Sources */,
 				C5E2E027282E79EF0099F8AE /* WeatherViewModel.swift in Sources */,
 				231D3C872831440900D9CF0D /* Instantiable.swift in Sources */,
@@ -354,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C563831C282E6F6600EAF646 /* WeatherTests.swift in Sources */,
+				231D3C8B28315A8F00D9CF0D /* FakeWeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = arnaldo.WeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -600,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = arnaldo.WeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

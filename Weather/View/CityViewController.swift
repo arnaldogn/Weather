@@ -23,6 +23,15 @@ class CityViewController: UITableViewController {
             self?.locations = locations ?? []
             self?.tableView.reloadData()
         }
+        
+        let server = Server(clients: [])
+        let client = Client(server: server)
+        
+        server.clients.append(client)
+        
+//        server.add(client: client)
+        
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
